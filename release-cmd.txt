@@ -1,0 +1,8 @@
+gh release create v2.0 \
+    lineage-23.0-20251214-UNOFFICIAL-veux.zip \
+    boot.img \
+    dtbo.img \
+    vendor_boot.img \
+    --repo nasyx-rakeeb/lineage-unofficial-veux-releases \
+    --title "LineageOS 23 - Update v2.0" \
+    --notes "Fixed bluetooth bugs, improved battery life, December security patch."
