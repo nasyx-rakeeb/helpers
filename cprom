@@ -12,7 +12,7 @@ cp ~/android/lineage/out/target/product/veux/dtbo.img ~/android/lineage/release_
 
 echo "Done..."
 
-cd out/target/product/veux/
+cd ~/android/lineage/out/target/product/veux/
 
 echo "{"
 echo "  \"response\": ["
@@ -27,3 +27,5 @@ echo "      \"version\": \"23.0\""
 echo "    }"
 echo "  ]"
 echo "}"
+
+cd ~/android/lineage/
