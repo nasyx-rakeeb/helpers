@@ -1,0 +1,29 @@
+echo "Started..."
+
+echo "Copying ROM file"
+
+cp ~/android/lineage/out/target/product/veux/lineage-*.zip ~/android/lineage/release_files/
+
+echo "Copying image files"
+
+cp ~/android/lineage/out/target/product/veux/boot.img ~/android/lineage/release_files/
+cp ~/android/lineage/out/target/product/veux/vendor_boot.img ~/android/lineage/release_files/
+cp ~/android/lineage/out/target/product/veux/dtbo.img ~/android/lineage/release_files/
+
+echo "Done..."
+
+cd out/target/product/veux/
+
+echo "{"
+echo "  \"response\": ["
+echo "    {"
+echo "      \"datetime\": $(grep "ro.build.date.utc" system/build.prop | cut -d= -f2),"
+echo "      \"filename\": \"$(ls lineage-*.zip | grep -v md5 | grep -v sha256)\","
+echo "      \"id\": \"$(cut -d' ' -f1 *.sha256sum)\","
+echo "      \"romtype\": \"unofficial\","
+echo "      \"size\": $(stat -c %s lineage-*.zip),"
+echo "      \"url\": \"YOUR_DOWNLOAD_LINK_HERE\","
+echo "      \"version\": \"23.0\""
+echo "    }"
+echo "  ]"
+echo "}"
