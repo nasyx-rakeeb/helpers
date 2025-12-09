@@ -1,0 +1,1 @@
+scp -i admin.pem ubuntu@13.201.221.52:/home/ubuntu/android/lineage/out/target/product/veux/system_ext/priv-app/Settings/Settings.apk . && adb shell "su -c 'rm /system_ext/priv-app/Settings/Settings.apk'" && adb push Settings.apk /system_ext/priv-app/Settings/ && adb shell chmod 644 /system_ext/priv-app/Settings/Settings.apk && adb shell am force-stop com.android.settings

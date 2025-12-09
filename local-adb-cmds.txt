@@ -1,0 +1,5 @@
+# DISCONNECT
+su -c 'setprop service.adb.tcp.port -1' && su -c 'stop adbd' && su -c 'start adbd'
+
+# CONNECT
+su -c 'setprop service.adb.tcp.port 5555' && su -c 'stop adbd' && su -c 'start adbd' && adb connect localhost
